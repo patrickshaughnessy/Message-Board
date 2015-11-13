@@ -1,0 +1,23 @@
+{
+  "name": "messageboard",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Patrick Shaughnessy <pshaughn86@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+  }
+}

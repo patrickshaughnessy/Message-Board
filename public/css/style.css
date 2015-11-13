@@ -1,0 +1,39 @@
+.title {
+  text-align: center;
+}
+
+#title {
+  font-family: 'Gloria Hallelujah', cursive;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#topic {
+  font-family: 'Architects Daughter', cursive;
+  text-transform: uppercase;
+}
+
+.row {
+  /*border: 1px solid black;*/
+  padding: 2%;
+}
+
+.left {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.message {
+  font-size: 200%;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.comments {
+
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}

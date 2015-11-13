@@ -1,0 +1,88 @@
+html
+  head
+    title Contact List 2
+    link(rel="stylesheet", href="bower_components/bootstrap/dist/css/bootstrap.min.css")
+    link(href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Architects+Daughter', rel='stylesheet', type='text/css')
+    link(rel="stylesheet", href="bower_components/font-awesome/css/font-awesome.min.css")
+    link(rel="stylesheet", href="css/style.css")
+  body
+    .container
+      .row
+        .col-xs-12.title
+          h1#title Today's Discussion Topic:
+          h1#topic In a pokemon vs unicorns war, which side would be victorious?
+          button.btn.btn-success.btn-lg(type='button', data-toggle='modal', data-target='#newMessageModal') Post A New Message
+          #newMessageModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='newMessageModalLabel')
+            .modal-dialog(role='document')
+              .modal-content
+                .modal-header
+                  button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') ×
+                  h4#newMessageModalLabel.modal-title Post a new message
+                .modal-body
+                  form(method='POST', action="/")
+                    .form-group
+                      label(for='nameInput') Name
+                      input#nameInput.form-control(type='text', placeholder='Name', name="name")
+                    .form-group
+                      textarea.form-control(rows='3', name="message")
+                      .radio
+                        label
+                          input#optionsRadios1(type='radio', name='image', value='pokemon', checked='')
+                          |     Pokemon will slaughter the unicorns!
+                      .radio
+                        label
+                          input#optionsRadios2(type='radio', name='image', value='unicorns')
+                          |     Unicorns shall be victorious!
+                      .radio
+                        label
+                          input#optionsRadios3(type='radio', name='image', value='peace')
+                          |     Why can't we all just get along?
+                    button.btn.btn-default(type='submit') Submit
+                .modal-footer
+                  button.btn.btn-default(type='button', data-dismiss='modal') Close
+  if messageboard.length
+    .container
+      each message in messageboard
+        .row
+          .col-xs-3.left
+            h2= message.name
+            - var time = message.time
+            p.time posted at #{time}
+            -var image = message.image
+            #image
+              if image === "pokemon"
+                img(src="http://img10.deviantart.net/906e/i/2012/207/7/e/happy_little_pokemon__by_wazzy88-d58o043.jpg")
+              else if image === "unicorns"
+                img(src="http://img00.deviantart.net/ca2c/i/2010/035/f/9/black_unicorn_by_ironshod.jpg")
+              else
+                img(src="http://cdn.thewire.com/media/img/upload/wire/2014/08/05/RTR3ALA9-1/lead_large.jpg")
+          .col-xs-7.message
+            p= message.message
+          .col-xs-2.comments
+            button.btn.btn-primary.comment Comment
+                
+              
+            
+          
+          
+        
+        
+          //- .table-responsive
+          //-   table.table
+          //-     thead
+          //-       tr
+          //-         th Name
+          //-         th Message
+          //-         th Time Posted
+          //-     tbody#messageboard
+          //-       each message in messageboard
+          //-         tr
+          //-           td= message.name
+          //-           td= message.message
+          //-           td= message.time
+          
+      
+  script(src="bower_components/jquery/dist/jquery.min.js")
+  script(src="bower_components/bootstrap/dist/js/bootstrap.min.js")
+  script(src="js/main.js")
