@@ -7,10 +7,10 @@ var messageSchema = mongoose.Schema({
   message: String,
   time: Number,
   image: String,
-  comments: {
-    time: Number,
-    comment: String
-  }
+  // comments: {
+  //   time: Array,
+  //   comment: Array
+  // } || undefined
 });
 
 var Message = mongoose.model('Message', messageSchema);

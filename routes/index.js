@@ -3,6 +3,7 @@
 var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
+var moment = require('moment');
 
 var Message = require('../models/message.js');
 
@@ -15,8 +16,10 @@ router.get('/', function(req, res){
 });
 
 router.post('/', function(req, res){
-  // console.log(req.body);
+  console.log('here', req.body);
+  // req.body.time = moment().format('MMMM Do YYYY, h:mm:ss a');
   req.body.time = Date.now();
+
 
   var message = new Message(req.body);
   // console.log('message: ', message);

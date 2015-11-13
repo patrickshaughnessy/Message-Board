@@ -3,7 +3,7 @@ html
     title Contact List 2
     link(rel="stylesheet", href="bower_components/bootstrap/dist/css/bootstrap.min.css")
     link(href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Architects+Daughter', rel='stylesheet', type='text/css')
-    link(rel="stylesheet", href="bower_components/font-awesome/css/font-awesome.min.css")
+    //- link(rel="stylesheet", href="bower_components/font-awesome/css/font-awesome.min.css")
     link(rel="stylesheet", href="css/style.css")
   body
     .container
@@ -59,29 +59,12 @@ html
                 img(src="http://cdn.thewire.com/media/img/upload/wire/2014/08/05/RTR3ALA9-1/lead_large.jpg")
           .col-xs-7.message
             p= message.message
-          .col-xs-2.comments
-            button.btn.btn-primary.comment Comment
-                
-              
-            
-          
-          
-        
-        
-          //- .table-responsive
-          //-   table.table
-          //-     thead
-          //-       tr
-          //-         th Name
-          //-         th Message
-          //-         th Time Posted
-          //-     tbody#messageboard
-          //-       each message in messageboard
-          //-         tr
-          //-           td= message.name
-          //-           td= message.message
-          //-           td= message.time
-          
+          //-   .row
+          //-     .col-xs-12.commentsArea
+          //-       each comment in comments
+          //-         p= comment
+          //- .col-xs-2.comments
+          //-   button.btn.btn-primary.comment Comment
       
   script(src="bower_components/jquery/dist/jquery.min.js")
   script(src="bower_components/bootstrap/dist/js/bootstrap.min.js")
